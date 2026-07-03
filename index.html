@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#101711">
+  <title>Shree Mangalam Estate | Coming Soon</title>
+  <meta name="description" content="Shree Mangalam Estate website launching soon. Real estate developer in Bilaspur, Chhattisgarh.">
+  <link rel="preload" as="image" href="assets/bg-arrival.webp">
+  <style>
+    :root {
+      --ink: #101711;
+      --white: #fff;
+      --leaf: #b7c98e;
+      --gold: #d7a661;
+      --rose: #c86d59;
+      --mist: rgba(255,255,255,.16);
+      --line: rgba(255,255,255,.2);
+      --bg: url("assets/bg-arrival.webp");
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100svh;
+      margin: 0;
+      color: var(--white);
+      background: var(--ink);
+      font-family: Arial, Helvetica, sans-serif;
+      letter-spacing: 0;
+      overflow: hidden;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .scene {
+      min-height: 100svh;
+      position: relative;
+      display: grid;
+      place-items: center;
+      padding: 34px;
+      isolation: isolate;
+    }
+
+    .scene::before {
+      content: "";
+      position: absolute;
+      inset: -4%;
+      z-index: -4;
+      background: var(--bg) center / cover no-repeat;
+      filter: saturate(1.08) contrast(1.08) brightness(.72);
+      transform: scale(1.04);
+      animation: slowFrame 18s ease-in-out infinite alternate;
+    }
+
+    .scene::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background:
+        radial-gradient(circle at 50% 32%, rgba(215,166,97,.24), transparent 28%),
+        radial-gradient(circle at 18% 80%, rgba(183,201,142,.22), transparent 30%),
+        linear-gradient(180deg, rgba(4,10,7,.48), rgba(4,10,7,.72)),
+        linear-gradient(90deg, rgba(4,10,7,.68), rgba(4,10,7,.1), rgba(4,10,7,.68));
+    }
+
+    .grain {
+      position: absolute;
+      inset: -20%;
+      z-index: -2;
+      opacity: .26;
+      background:
+        repeating-linear-gradient(128deg, transparent 0 14px, rgba(255,255,255,.055) 15px, transparent 17px),
+        radial-gradient(circle at 20% 20%, rgba(255,255,255,.15), transparent 2px),
+        radial-gradient(circle at 70% 68%, rgba(255,255,255,.12), transparent 2px);
+      background-size: auto, 280px 280px, 340px 340px;
+      animation: air 14s ease-in-out infinite alternate;
+      pointer-events: none;
+    }
+
+    main {
+      width: min(980px, 100%);
+      display: grid;
+      justify-items: center;
+      gap: clamp(18px, 3vw, 28px);
+      text-align: center;
+    }
+
+    .brand-mark {
+      min-height: auto;
+      display: grid;
+      place-items: center;
+    }
+
+    .brand-mark img {
+      width: min(460px, 78vw);
+      max-height: 48svh;
+      object-fit: contain;
+      filter: drop-shadow(0 22px 42px rgba(0,0,0,.36));
+    }
+
+    h1 {
+      margin: 0;
+      color: rgba(255,255,255,.92);
+      font-size: clamp(2rem, 5.8vw, 5rem);
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .line {
+      width: min(560px, 70vw);
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.62), transparent);
+    }
+
+    p {
+      max-width: 640px;
+      margin: 0;
+      color: rgba(255,255,255,.72);
+      font-size: clamp(.95rem, 1.4vw, 1.15rem);
+      line-height: 1.7;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn {
+      min-height: 46px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 18px;
+      border: 1px solid var(--line);
+      color: white;
+      background: rgba(255,255,255,.08);
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      backdrop-filter: blur(12px);
+      transition: transform .2s ease, background .2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      background: rgba(255,255,255,.16);
+    }
+
+    .btn.primary {
+      color: #182015;
+      border-color: transparent;
+      background: var(--leaf);
+    }
+
+    .btn.primary:hover {
+      background: var(--gold);
+    }
+
+    .ticker {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      display: flex;
+      gap: 24px;
+      padding: 12px 0;
+      border-top: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.54);
+      background: rgba(8,14,10,.58);
+      overflow: hidden;
+      white-space: nowrap;
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      backdrop-filter: blur(12px);
+    }
+
+    .ticker span {
+      min-width: max-content;
+      animation: marquee 24s linear infinite;
+    }
+
+    @keyframes slowFrame {
+      to { transform: scale(1.1) translate3d(-1.8%, 1.2%, 0); }
+    }
+
+    @keyframes air {
+      to { transform: translate3d(4%, -3%, 0) rotate(1deg); }
+    }
+
+    @keyframes marquee {
+      to { transform: translateX(-100%); }
+    }
+
+    @media (max-width: 640px) {
+      .scene {
+        padding: 24px 18px 70px;
+      }
+
+      .brand-mark {
+        min-height: auto;
+      }
+
+      .brand-mark img {
+        width: min(330px, 82vw);
+        max-height: 42svh;
+      }
+
+      h1 {
+        letter-spacing: .1em;
+      }
+
+      .actions {
+        width: 100%;
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .scene::before,
+      .grain,
+      .ticker span {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="scene">
+    <div class="grain" aria-hidden="true"></div>
+    <main>
+      <div class="brand-mark">
+        <img src="assets/logo.png" alt="Shree Mangalam Estate">
+      </div>
+
+      <div class="line" aria-hidden="true"></div>
+      <h1>Coming Soon</h1>
+
+      <div class="actions">
+        <a class="btn primary" href="tel:+919183244419">Call now</a>
+        <a class="btn" href="https://www.instagram.com/shree_mangalam_estates/" target="_blank" rel="noopener">Instagram</a>
+        <a class="btn" href="https://www.facebook.com/shreemangalamestates/" target="_blank" rel="noopener">Facebook</a>
+      </div>
+    </main>
+    <div class="ticker" aria-hidden="true">
+      <span>Real estate development · Bilaspur · Plotted communities · Site visits · Launching soon ·</span>
+      <span>Real estate development · Bilaspur · Plotted communities · Site visits · Launching soon ·</span>
+      <span>Real estate development · Bilaspur · Plotted communities · Site visits · Launching soon ·</span>
+    </div>
+  </section>
+  <script>
+    const backgrounds = [
+      "assets/bg-arrival.webp",
+      "assets/bg-garden.webp",
+      "assets/bg-evening.webp"
+    ];
+    let index = 0;
+    setInterval(() => {
+      index = (index + 1) % backgrounds.length;
+      document.documentElement.style.setProperty("--bg", `url("${backgrounds[index]}")`);
+    }, 6500);
+  </script>
+</body>
+</html>
