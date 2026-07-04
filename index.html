@@ -1,133 +1,131 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#101711">
-  <title>Shree Mangalam Estate | Coming Soon</title>
-  <meta name="description" content="Shree Mangalam Estate website launching soon. Real estate developer in Bilaspur, Chhattisgarh.">
+  <meta name="theme-color" content="#090909">
+  <title>Shree Mangalam Estates | Premium Plots & Homes</title>
+  <meta name="description" content="Shree Mangalam Estates develops premium plotted communities and homes in Bilaspur, Chhattisgarh. Explore Anant Greens and connect for site visits.">
+  <link rel="preload" as="image" href="assets/logo.png">
   <link rel="preload" as="image" href="assets/bg-arrival.webp">
   <style>
     :root {
-      --ink: #101711;
-      --white: #fff;
-      --leaf: #b7c98e;
-      --gold: #d7a661; 
-      --rose: #c86d59;
-      --mist: rgba(255,255,255,.16);
-      --line: rgba(255,255,255,.2);
-      --bg: url("assets/bg-arrival.webp");
+      --black: #090909;
+      --coal: #151515;
+      --soft-black: #202020;
+      --white: #ffffff;
+      --cream: #f6f2e9;
+      --gold: #f4b51d;
+      --green: #205f47;
+      --smoke: #e6e1d8;
+      --muted: #827b70;
+      --line: rgba(9,9,9,.14);
+      --line-dark: rgba(255,255,255,.14);
     }
 
     * { box-sizing: border-box; }
+    html {
+      scroll-behavior: smooth;
+      overflow-x: clip;
+    }
 
     body {
-      min-height: 100svh;
       margin: 0;
-      color: var(--white);
-      background: var(--ink);
+      color: var(--black);
+      background: var(--cream);
       font-family: Arial, Helvetica, sans-serif;
       letter-spacing: 0;
-      overflow: hidden;
+      overflow-x: clip;
     }
 
+    img { display: block; width: 100%; }
     a { color: inherit; text-decoration: none; }
+    button { font: inherit; }
 
-    .scene {
-      min-height: 100svh;
-      position: relative;
+    .container {
+      width: min(1280px, calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    .site-header {
+      position: fixed;
+      left: 18px;
+      right: 18px;
+      top: 18px;
+      z-index: 50;
+      color: white;
+      background: rgba(9,9,9,.88);
+      border: 1px solid var(--line-dark);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 22px 60px rgba(0,0,0,.28);
+    }
+
+    .nav {
+      min-height: 72px;
       display: grid;
-      place-items: center;
-      padding: 34px;
-      isolation: isolate;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 26px;
+      padding: 0 14px;
     }
 
-    .scene::before {
-      content: "";
-      position: absolute;
-      inset: -4%;
-      z-index: -4;
-      background: var(--bg) center / cover no-repeat;
-      filter: saturate(1.08) contrast(1.08) brightness(.72);
-      transform: scale(1.04);
-      animation: slowFrame 18s ease-in-out infinite alternate;
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
     }
 
-    .scene::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      z-index: -3;
-      background:
-        radial-gradient(circle at 50% 32%, rgba(215,166,97,.24), transparent 28%),
-        radial-gradient(circle at 18% 80%, rgba(183,201,142,.22), transparent 30%),
-        linear-gradient(180deg, rgba(4,10,7,.48), rgba(4,10,7,.72)),
-        linear-gradient(90deg, rgba(4,10,7,.68), rgba(4,10,7,.1), rgba(4,10,7,.68));
-    }
-
-    .grain {
-      position: absolute;
-      inset: -20%;
-      z-index: -2;
-      opacity: .26;
-      background:
-        repeating-linear-gradient(128deg, transparent 0 14px, rgba(255,255,255,.055) 15px, transparent 17px),
-        radial-gradient(circle at 20% 20%, rgba(255,255,255,.15), transparent 2px),
-        radial-gradient(circle at 70% 68%, rgba(255,255,255,.12), transparent 2px);
-      background-size: auto, 280px 280px, 340px 340px;
-      animation: air 14s ease-in-out infinite alternate;
-      pointer-events: none;
-    }
-
-    main {
-      width: min(980px, 100%);
-      display: grid;
-      justify-items: center;
-      gap: clamp(18px, 3vw, 28px);
-      text-align: center;
-    }
-
-    .brand-mark {
-      min-height: auto;
-      display: grid;
-      place-items: center;
-    }
-
-    .brand-mark img {
-      width: min(460px, 78vw);
-      max-height: 48svh;
+    .brand img {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
       object-fit: contain;
-      filter: drop-shadow(0 22px 42px rgba(0,0,0,.36));
+      background: white;
     }
 
-    h1 {
-      margin: 0;
-      color: rgba(255,255,255,.92);
-      font-size: clamp(2rem, 5.8vw, 5rem);
-      font-weight: 900;
+    .brand strong {
+      display: block;
+      font-size: .8rem;
+      font-weight: 950;
+      line-height: 1;
       letter-spacing: .16em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .brand small {
+      display: block;
+      margin-top: 5px;
+      color: rgba(255,255,255,.58);
+      font-size: .58rem;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .nav-links a {
+      min-height: 38px;
+      display: inline-flex;
+      align-items: center;
+      padding: 0 13px;
+      color: rgba(255,255,255,.72);
+      font-size: .68rem;
+      font-weight: 950;
+      letter-spacing: .1em;
       text-transform: uppercase;
     }
 
-    .line {
-      width: min(560px, 70vw);
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.62), transparent);
-    }
-
-    p {
-      max-width: 640px;
-      margin: 0;
-      color: rgba(255,255,255,.72);
-      font-size: clamp(.95rem, 1.4vw, 1.15rem);
-      line-height: 1.7;
-    }
-
-    .actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
+    .nav-links a:hover {
+      color: var(--black);
+      background: var(--gold);
     }
 
     .btn {
@@ -136,140 +134,781 @@
       align-items: center;
       justify-content: center;
       padding: 0 18px;
-      border: 1px solid var(--line);
+      border: 1px solid var(--black);
       color: white;
-      background: rgba(255,255,255,.08);
+      background: var(--black);
       font-size: .72rem;
-      font-weight: 900;
+      font-weight: 950;
       letter-spacing: .08em;
       text-transform: uppercase;
-      backdrop-filter: blur(12px);
-      transition: transform .2s ease, background .2s ease;
+      cursor: pointer;
+      transition: transform .2s ease, background .2s ease, border-color .2s ease, color .2s ease;
     }
 
     .btn:hover {
       transform: translateY(-2px);
-      background: rgba(255,255,255,.16);
+      color: var(--black);
+      background: var(--gold);
+      border-color: var(--gold);
     }
 
-    .btn.primary {
-      color: #182015;
-      border-color: transparent;
-      background: var(--leaf);
-    }
-
-    .btn.primary:hover {
+    .btn.gold {
+      color: var(--black);
+      border-color: var(--gold);
       background: var(--gold);
     }
 
-    .ticker {
-      position: fixed;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      display: flex;
-      gap: 24px;
-      padding: 12px 0;
-      border-top: 1px solid rgba(255,255,255,.12);
-      color: rgba(255,255,255,.54);
-      background: rgba(8,14,10,.58);
+    .btn.gold:hover {
+      color: white;
+      border-color: white;
+      background: transparent;
+    }
+
+    .btn.light {
+      color: var(--black);
+      border-color: white;
+      background: white;
+    }
+
+    .btn.outline {
+      color: var(--black);
+      border-color: var(--line);
+      background: transparent;
+    }
+
+    .btn.outline:hover {
+      color: white;
+      border-color: var(--black);
+      background: var(--black);
+    }
+
+    .menu {
+      display: none;
+      min-width: 46px;
+      min-height: 46px;
+      border: 1px solid var(--line-dark);
+      color: white;
+      background: transparent;
+      font-size: .66rem;
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      color: white;
+      background: var(--black);
+      display: grid;
+      align-items: end;
       overflow: hidden;
-      white-space: nowrap;
-      font-size: .68rem;
-      font-weight: 900;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background: url("assets/bg-arrival.webp") center / cover no-repeat;
+      filter: saturate(.98) contrast(1.08) brightness(.82);
+      transform: scale(1.04);
+      animation: photoMove 18s ease-in-out infinite alternate;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 78% 12%, rgba(244,181,29,.32), transparent 30%),
+        linear-gradient(180deg, rgba(9,9,9,.24), rgba(9,9,9,.88)),
+        linear-gradient(90deg, rgba(9,9,9,.82), rgba(9,9,9,.22) 58%, rgba(9,9,9,.58));
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 1;
+      width: min(1280px, calc(100% - 48px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+      gap: clamp(24px, 5vw, 72px);
+      align-items: end;
+      min-height: 100svh;
+      padding: 138px 0 52px;
+    }
+
+    .hero-copy {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 0;
+    }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--gold);
+      font-size: .7rem;
+      font-weight: 950;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      margin-bottom: 0;
+      max-width: 900px;
+      font-size: clamp(4.1rem, 10.8vw, 11.8rem);
+      font-weight: 950;
+      line-height: .78;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 span {
+      display: block;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,.58);
+      text-stroke: 1px rgba(255,255,255,.58);
+    }
+
+    .lead {
+      max-width: 650px;
+      margin: 28px 0 0;
+      color: rgba(255,255,255,.68);
+      font-size: clamp(1rem, 1.4vw, 1.18rem);
+      line-height: 1.75;
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .hero-panel {
+      position: relative;
+      min-height: 0;
+      border-left: 0;
+      background: transparent;
+      overflow: visible;
+    }
+
+    .logo-plate {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 118px 1fr;
+      gap: 18px;
+      align-items: center;
+      padding: 18px;
+      color: var(--black);
+      background: rgba(255,255,255,.9);
+      border: 1px solid rgba(255,255,255,.44);
+      box-shadow: 0 28px 80px rgba(0,0,0,.32);
+      backdrop-filter: blur(16px);
+    }
+
+    .logo-plate img {
+      width: 118px;
+      height: 118px;
+      border-radius: 50%;
+      object-fit: contain;
+      background: white;
+    }
+
+    .logo-plate strong {
+      display: block;
+      font-size: 1.35rem;
+      font-weight: 950;
+      line-height: 1.05;
+      text-transform: uppercase;
+    }
+
+    .logo-plate small {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border-top: 1px solid var(--line-dark);
+      border-bottom: 1px solid var(--line-dark);
+      background: var(--soft-black);
+    }
+
+    .stat {
+      min-height: 138px;
+      padding: 22px;
+      color: white;
+      border-right: 1px solid var(--line-dark);
+    }
+
+    .stat:last-child { border-right: 0; }
+    .stat small {
+      color: rgba(255,255,255,.52);
+      font-size: .66rem;
+      font-weight: 950;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .stat strong {
+      display: block;
+      margin-top: 24px;
+      font-size: clamp(1.8rem, 3vw, 3.3rem);
+      font-weight: 950;
+      line-height: .9;
+      text-transform: uppercase;
+    }
+
+    .section {
+      padding: 104px 0;
+    }
+
+    .section.light {
+      background: var(--cream);
+    }
+
+    .section.black {
+      color: white;
+      background: var(--black);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
+      gap: 44px;
+      align-items: end;
+      margin-bottom: 42px;
+    }
+
+    .display {
+      margin: 0;
+      max-width: 880px;
+      font-size: clamp(3rem, 6.2vw, 7rem);
+      font-weight: 950;
+      line-height: .86;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    .section.black .display { color: white; }
+
+    .intro {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.75;
+    }
+
+    .section.black .intro {
+      color: rgba(255,255,255,.64);
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .process-step {
+      min-height: 310px;
+      padding: 26px;
+      background: white;
+      border: 1px solid var(--line);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .process-step b {
+      color: var(--green);
+      font-size: .7rem;
       letter-spacing: .16em;
       text-transform: uppercase;
-      backdrop-filter: blur(12px);
     }
 
-    .ticker span {
-      min-width: max-content;
-      animation: marquee 24s linear infinite;
+    .process-step h3 {
+      margin: 44px 0 14px;
+      font-size: clamp(2rem, 3vw, 3.1rem);
+      font-weight: 950;
+      line-height: .92;
+      text-transform: uppercase;
     }
 
-    @keyframes slowFrame {
-      to { transform: scale(1.1) translate3d(-1.8%, 1.2%, 0); }
+    .process-step p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
     }
 
-    @keyframes air {
-      to { transform: translate3d(4%, -3%, 0) rotate(1deg); }
+    .project-board {
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+      gap: 18px;
+      align-items: stretch;
     }
 
-    @keyframes marquee {
-      to { transform: translateX(-100%); }
+    .project-image {
+      min-height: 640px;
+      position: relative;
+      background: url("assets/bg-garden.webp") center / cover no-repeat;
+    }
+
+    .project-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(9,9,9,.72), transparent 58%);
+    }
+
+    .project-info {
+      padding: clamp(30px, 5vw, 58px);
+      color: var(--black);
+      background: var(--gold);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .project-info .eyebrow {
+      color: var(--black);
+    }
+
+    .project-info h3 {
+      margin: 0;
+      font-size: clamp(4rem, 8vw, 8.6rem);
+      font-weight: 950;
+      line-height: .78;
+      text-transform: uppercase;
+    }
+
+    .project-info p {
+      max-width: 540px;
+      margin: 28px 0 0;
+      color: rgba(9,9,9,.72);
+      line-height: 1.7;
+    }
+
+    .project-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin: 30px 0;
+      background: rgba(9,9,9,.18);
+    }
+
+    .project-fact {
+      padding: 16px;
+      background: rgba(255,255,255,.36);
+    }
+
+    .project-fact small {
+      display: block;
+      color: rgba(9,9,9,.58);
+      font-size: .62rem;
+      font-weight: 950;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .project-fact strong {
+      display: block;
+      margin-top: 9px;
+      color: var(--black);
+      font-size: 1.65rem;
+      font-weight: 950;
+      text-transform: uppercase;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(340px, .9fr);
+      gap: 16px;
+    }
+
+    .contact-visual {
+      min-height: 620px;
+      position: relative;
+      background: url("assets/bg-evening.webp") center / cover no-repeat;
+    }
+
+    .contact-visual::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(9,9,9,.74), transparent 55%);
+    }
+
+    .contact-panel {
+      padding: clamp(30px, 5vw, 56px);
+      color: white;
+      background: var(--coal);
+      border: 1px solid var(--line-dark);
+    }
+
+    .contact-panel img {
+      width: 104px;
+      height: 104px;
+      border-radius: 50%;
+      object-fit: contain;
+      margin-bottom: 30px;
+      background: white;
+    }
+
+    .contact-panel .display {
+      color: white;
+      font-size: clamp(2.6rem, 5vw, 5.6rem);
+    }
+
+    .details {
+      margin: 30px 0;
+      border-top: 1px solid var(--line-dark);
+    }
+
+    .detail {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 18px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line-dark);
+    }
+
+    .detail small {
+      color: var(--gold);
+      font-size: .66rem;
+      font-weight: 950;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .detail strong {
+      line-height: 1.45;
+    }
+
+    .footer {
+      padding: 28px 0;
+      color: rgba(255,255,255,.64);
+      background: var(--black);
+      border-top: 1px solid var(--line-dark);
+      font-size: .74rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    @keyframes photoMove {
+      to { transform: scale(1.1) translate3d(-2%, 1%, 0); }
+    }
+
+    @media (max-width: 1040px) {
+      .nav {
+        grid-template-columns: auto auto;
+      }
+
+      .nav-links,
+      .nav > .btn {
+        display: none;
+      }
+
+      .menu {
+        display: inline-grid;
+        place-items: center;
+        justify-self: end;
+      }
+
+      .site-header.open .nav-links {
+        grid-column: 1 / -1;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 0 16px;
+      }
+
+      .hero-grid,
+      .section-head,
+      .project-board,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel {
+        max-width: 560px;
+      }
+
+      .process {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 640px) {
-      .scene {
-        padding: 24px 18px 70px;
+      .container {
+        width: min(100% - 28px, 1280px);
       }
 
-      .brand-mark {
-        min-height: auto;
+      .site-header {
+        left: 10px;
+        right: 10px;
+        top: 10px;
       }
 
-      .brand-mark img {
-        width: min(330px, 82vw);
-        max-height: 42svh;
+      .brand img {
+        width: 46px;
+        height: 46px;
+      }
+
+      .brand strong {
+        font-size: .68rem;
+      }
+
+      .brand small {
+        display: none;
+      }
+
+      .hero-copy {
+        padding: 0;
       }
 
       h1 {
-        letter-spacing: .1em;
+        font-size: clamp(3.75rem, 18vw, 6.2rem);
       }
 
       .actions {
-        width: 100%;
         flex-direction: column;
       }
 
       .btn {
         width: 100%;
       }
+
+      .stats,
+      .project-facts {
+        grid-template-columns: 1fr;
+      }
+
+      .stat,
+      .project-fact {
+        border-right: 0;
+        border-bottom: 1px solid var(--line-dark);
+      }
+
+      .stat:last-child,
+      .project-fact:last-child {
+        border-bottom: 0;
+      }
+
+      .section {
+        padding: 76px 0;
+      }
+
+      .hero-panel,
+      .project-image,
+      .contact-visual {
+        min-height: 440px;
+      }
+
+      .hero-panel {
+        min-height: 0;
+      }
+
+      .logo-plate {
+        grid-template-columns: 86px 1fr;
+      }
+
+      .logo-plate img {
+        width: 86px;
+        height: 86px;
+      }
+
+      .detail {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .footer-row {
+        align-items: flex-start;
+        flex-direction: column;
+      }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .scene::before,
-      .grain,
-      .ticker span {
-        animation: none;
-      }
+      html { scroll-behavior: auto; }
+      .hero::before { animation: none; }
     }
   </style>
 </head>
 <body>
-  <section class="scene">
-    <div class="grain" aria-hidden="true"></div>
-    <main>
-      <div class="brand-mark">
-        <img src="assets/logo.png" alt="Shree Mangalam Estate">
-      </div>
-
-      <div class="line" aria-hidden="true"></div>
-      <h1>Coming Soon</h1>
-
-      <div class="actions">
-        <a class="btn primary" href="tel:+919183244419">Call now</a>
-        <a class="btn" href="https://www.instagram.com/shree_mangalam_estates/" target="_blank" rel="noopener">Instagram</a>
-        <a class="btn" href="https://www.facebook.com/shreemangalamestates/" target="_blank" rel="noopener">Facebook</a>
-      </div>
-    </main>
-    <div class="ticker" aria-hidden="true">
-      <span>Real estate development · Bilaspur · Plotted communities · Site visits · Launching soon ·</span>
-      <span>Real estate development · Bilaspur · Plotted communities · Site visits · Launching soon ·</span>
-      <span>Real estate development · Bilaspur · Plotted communities · Site visits · Launching soon ·</span>
+  <header class="site-header" id="header">
+    <div class="nav">
+      <a class="brand" href="#top" aria-label="Shree Mangalam Estates home">
+        <img src="assets/logo.png" alt="Shree Mangalam Estates">
+        <span><strong>Shree Mangalam</strong><small>Premium plots & homes</small></span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">Method</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+        <a href="../index.html" target="_blank" rel="noopener">Anant Greens</a>
+      </nav>
+      <a class="btn gold" href="tel:+919183244419">Call now</a>
+      <button class="menu" type="button" id="menu" aria-label="Toggle navigation">Menu</button>
     </div>
-  </section>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Bilaspur developer</p>
+          <h1>Build<br><span>ground</span></h1>
+          <p class="lead">Shree Mangalam Estates develops premium plotted communities and homes with focus on location, documentation and buyer confidence.</p>
+          <div class="actions">
+            <a class="btn gold" href="#projects">View projects</a>
+            <a class="btn light" href="../index.html" target="_blank" rel="noopener">Open Anant Greens</a>
+          </div>
+        </div>
+
+        <div class="hero-panel">
+          <div class="logo-plate">
+            <img src="assets/logo.png" alt="Shree Mangalam Estates logo">
+            <div>
+              <strong>Premium plots & homes</strong>
+              <small>Developer-led sites, transparent conversations and project visits.</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Developer focus">
+      <div class="stat"><small>Focus</small><strong>Plots</strong></div>
+      <div class="stat"><small>Region</small><strong>Bilaspur</strong></div>
+      <div class="stat"><small>Style</small><strong>Premium</strong></div>
+    </section>
+
+    <section class="section light" id="about">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Method</p>
+            <h2 class="display">Clean process. Clear land decisions.</h2>
+          </div>
+          <p class="intro">The Shree Mangalam Estates experience is structured around practical buyer questions: where is it, what is approved, what is available and what is the next step?</p>
+        </div>
+
+        <div class="process">
+          <article class="process-step">
+            <b>01 · Location</b>
+            <div><h3>Start with access</h3><p>Roads, surroundings and everyday routes shape the value of every plotted opportunity.</p></div>
+          </article>
+          <article class="process-step">
+            <b>02 · Layout</b>
+            <div><h3>Make it readable</h3><p>Plot dimensions, open areas and movement are presented in a way buyers can understand.</p></div>
+          </article>
+          <article class="process-step">
+            <b>03 · Visit</b>
+            <div><h3>Answer on site</h3><p>Availability, documents, price, timeline and suitability stay central to the conversation.</p></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section black" id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Featured project</p>
+            <h2 class="display">Anant Greens</h2>
+          </div>
+          <p class="intro">A plotted township in Sarkanda, Bilaspur. Open the dedicated project website in a new tab for layout, gallery, approvals and location details.</p>
+        </div>
+
+        <article class="project-board">
+          <div class="project-image" aria-label="Anant Greens project visual"></div>
+          <div class="project-info">
+            <div>
+              <p class="eyebrow">Project board</p>
+              <h3>Anant<br>Greens</h3>
+              <p>A landscape-led plotted community by Shri Anant Creation, located at Ashok Nagar, Sarkanda, beside Patrakar Colony.</p>
+              <div class="project-facts" aria-label="Anant Greens highlights">
+                <div class="project-fact"><small>Township</small><strong>6 Acres</strong></div>
+                <div class="project-fact"><small>Road edge</small><strong>100'</strong></div>
+                <div class="project-fact"><small>CG-RERA</small><strong>Registered</strong></div>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn" href="../index.html" target="_blank" rel="noopener">Open website</a>
+              <a class="btn outline" href="https://rahulshukla7024.github.io/Anant-Greens/#interactive-layout" target="_blank" rel="noopener">Interactive layout</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section black" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-visual" aria-label="Project visual"></div>
+        <div class="contact-panel">
+          <img src="assets/logo.png" alt="Shree Mangalam Estates">
+          <p class="eyebrow">Contact</p>
+          <h2 class="display">Book a conversation.</h2>
+          <div class="details">
+            <div class="detail"><small>Phone</small><strong>+91 91832 44419 / +91 97522 44419</strong></div>
+            <div class="detail"><small>Instagram</small><strong>@shree_mangalam_estates</strong></div>
+            <div class="detail"><small>Facebook</small><strong>Shree Mangalam Estates</strong></div>
+            <div class="detail"><small>Focus</small><strong>Premium plots, homes and plotted communities in Bilaspur.</strong></div>
+          </div>
+          <div class="actions">
+            <a class="btn gold" href="tel:+919183244419">Call now</a>
+            <a class="btn light" href="https://www.instagram.com/shree_mangalam_estates/" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn light" href="https://www.facebook.com/shreemangalamestates/" target="_blank" rel="noopener">Facebook</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span>Shree Mangalam Estates · Premium plots & homes</span>
+      <div class="footer-links">
+        <a href="#about">Method</a>
+        <a href="#projects">Projects</a>
+        <a href="../index.html" target="_blank" rel="noopener">Anant Greens</a>
+      </div>
+    </div>
+  </footer>
+
   <script>
-    const backgrounds = [
-      "assets/bg-arrival.webp",
-      "assets/bg-garden.webp",
-      "assets/bg-evening.webp"
-    ];
-    let index = 0;
-    setInterval(() => {
-      index = (index + 1) % backgrounds.length;
-      document.documentElement.style.setProperty("--bg", `url("${backgrounds[index]}")`);
-    }, 6500);
+    const header = document.getElementById("header");
+    const menu = document.getElementById("menu");
+
+    menu.addEventListener("click", () => {
+      header.classList.toggle("open");
+    });
+
+    header.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => header.classList.remove("open"));
+    });
   </script>
 </body>
 </html>
